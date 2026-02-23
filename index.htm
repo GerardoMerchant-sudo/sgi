@@ -9,6 +9,7 @@
 
   html, body {
     height: 100%;
+    overflow: hidden;
     font-family: Arial, sans-serif;
     background: #f0f4f8;
   }
@@ -16,30 +17,34 @@
   header {
     background: #015D94;
     padding: 12px 24px;
+    height: 56px;
     display: flex;
     align-items: center;
     gap: 14px;
+    flex-shrink: 0;
   }
 
   header img {
-    height: 40px;
+    height: 34px;
     width: auto;
-    /* El logo tiene fondo oscuro, se ve bien sobre azul */
   }
 
   header span {
-    color: rgba(255,255,255,0.7);
-    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
     border-left: 1px solid rgba(255,255,255,0.3);
     padding-left: 14px;
-    margin-left: 4px;
   }
 
-  main {
-    height: calc(100vh - 65px);
-    padding: 20px;
+  .wrapper {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 16px;
   }
 
   iframe {
@@ -48,6 +53,7 @@
     border: none;
     border-radius: 8px;
     box-shadow: 0 4px 24px rgba(1,93,148,0.15);
+    display: block;
   }
 </style>
 </head>
@@ -58,9 +64,9 @@
   <span>Sistema de Gestión Integral</span>
 </header>
 
-<main>
-  <iframe src="sgi.pdf"></iframe>
-</main>
+<div class="wrapper">
+  <iframe src="sgi.pdf#view=FitH&toolbar=1&navpanes=1&scrollbar=1" allowfullscreen></iframe>
+</div>
 
 </body>
 </html>
